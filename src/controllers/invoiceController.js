@@ -1,4 +1,4 @@
-const { calculateEA, calculateEC, calculateEE1, calculateEE2, getTariff, getTotalEnergy } = require('../services/energyBilling');
+const { calculateEA, calculateEC, calculateEE1, calculateEE2, getTariff, getTotalEnergy } = require('../services/invoiceService');
 
 const calculateInvoice = async (req, res) => {
     try {
