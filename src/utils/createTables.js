@@ -1,12 +1,4 @@
-const { Pool } = require('pg');
-
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'root',
-    port: 5434,              
-});
+const { query } = require('./connection');
 
 const createTablesSQL = `
 -- Tabla: services
@@ -64,12 +56,10 @@ CREATE TABLE IF NOT EXISTS xm_data_hourly_per_agent (
 const createTables = async () => {
     try {
         console.log('Creando tablas en la base de datos...');
-        await pool.query(createTablesSQL);
+        await query(createTablesSQL);
         console.log('Tablas creadas exitosamente.');
     } catch (error) {
         console.error('Error al crear las tablas:', error.message);
-    } finally {
-        await pool.end();
     }
 };
 
