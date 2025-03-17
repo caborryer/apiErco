@@ -15,9 +15,10 @@ Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. P
 
 
 ### **2. Instala las dependencias del proyecto corriendo el comando `npm install`
-2. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo src/database/connection.js. Por ejemplo:
 
-```const pool = new Pool({
+### **3. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo src/database/connection.js. Por ejemplo:
+
+`const pool = new Pool({
     user: '<tu_usuario>',
     host: '<host>',
     database: '<nombre_base_datos>',
@@ -25,17 +26,19 @@ Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. P
     port: 5432,
 });
 `
-3. Ejecuta el comando `npm run create-tables`, este comando se encargara de crear las tablas en la base de datos segun el esquema propuesto.
-4. Ejecuta el comando `npm run load-csv-data` que se encargara de cargar los datos iniciales desde los archivos CSV en las tablas correspondientes (en el orden correcto): 
+### **4. Ejecuta el comando `npm run create-tables`, este comando se encargara de crear las tablas en la base de datos segun el esquema propuesto.
+
+### **5. Ejecuta el comando `npm run load-csv-data` que se encargara de cargar los datos iniciales desde los archivos CSV en las tablas correspondientes (en el orden correcto): 
 
 Esto cargará automáticamente los datos de los siguientes archivos:
 
-services.csv
+`services.csv
 tariffs.csv
 records.csv
 consumption.csv
 injection.csv
 xm_data_hourly_per_agent.csv
+`
 
 5. Ejecuta el proyecto corriendo el comando `npm run dev`. El servidor estará funcionando en: http://localhost:3000 🚀
 
