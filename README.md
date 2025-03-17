@@ -9,9 +9,9 @@ Bienvenido a APIERCO, una API diseñada para el cálculo, análisis y facturaci�
 Sigue estos simples pasos para configurar y ejecutar la API:
 
 ### **1. Verifica tu versión de Node.js**
-Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando: `bash node -v`
+Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando: ```bash node -v```
 
-### **2. Instala las dependencias del proyecto corriendo el comando `npm install`
+### **2. Instala las dependencias del proyecto corriendo el comando ```npm install```
 
 ### **3. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo `src/database/connection.js`. Por ejemplo:
 
@@ -23,21 +23,21 @@ Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. P
     port: 5432,
 });
 ```
-### **4. Ejecuta el comando `npm run create-tables`, este comando se encargara de crear las tablas en la base de datos segun el esquema propuesto.
+### **4. Ejecuta el comando ```npm run create-tables```, este comando se encargara de crear las tablas en la base de datos segun el esquema propuesto.
 
-### **5. Ejecuta el comando `npm run load-csv-data` que se encargara de cargar los datos iniciales desde los archivos CSV en las tablas correspondientes (en el orden correcto): 
+### **5. Ejecuta el comando ```npm run load-csv-data``` que se encargara de cargar los datos iniciales desde los archivos CSV en las tablas correspondientes (en el orden correcto): 
 
 Esto cargará automáticamente los datos de los siguientes archivos:
 
-`services.csv
+```services.csv
 tariffs.csv
 records.csv
 consumption.csv
 injection.csv
 xm_data_hourly_per_agent.csv
-`
+```
 
-5. Ejecuta el proyecto corriendo el comando `npm run dev`. El servidor estará funcionando en: http://localhost:3000 🚀
+### **6. Ejecuta el proyecto corriendo el comando `npm run dev`. El servidor estará funcionando en: http://localhost:3000 🚀
 
 ## 🧪 Prueba las Rutas de la API con cURL
 
@@ -45,30 +45,31 @@ xm_data_hourly_per_agent.csv
 
 1. Calcular Factura (POST /api/calculate-invoice)
 
-`curl --location 'http://localhost:3000/api/calculate-invoice' \
+```curl --location 'http://localhost:3000/api/calculate-invoice' \
 --header 'Content-Type: application/json' \
 --data '{
     "month": 9
-}'`
+}'
+```
 
 2. Estadísticas del Cliente (GET /api/client-statistics/{client_id})
 
-`curl --location 'http://localhost:3000/api/client-statistics/{client_id}'`
+```curl --location 'http://localhost:3000/api/client-statistics/{client_id}'```
 
 3. Carga del Sistema por Hora (GET /api/system-load)
 
-`curl --location 'http://localhost:3000/api/system-load'`
+```curl --location 'http://localhost:3000/api/system-load'```
 
 4. Energía Activa por Mes (GET /ea/{month})
 
-`curl --location 'http://localhost:3000/api/ea/{month}'`
+```curl --location 'http://localhost:3000/api/ea/{month}'```
 
 
 ## 📖 Documentación de la API
 
 Accede a la documentación interactiva de la API, generada con Swagger, desde tu navegador:
 
-👉 http://localhost:3000/api-docs
+👉 ```http://localhost:3000/api-docs```
 
 Ahí podrás explorar cada endpoint, probarlo directamente y visualizar los datos esperados.
 
@@ -76,7 +77,7 @@ Ahí podrás explorar cada endpoint, probarlo directamente y visualizar los dato
 
 El proyecto está organizado para favorecer la modularidad y facilidad de mantenimiento. Aquí tienes una vista general de la estructura:
 
-src/
+```src/
 |-- data/                      // Archivos CSV para cargar datos iniciales
 |-- utils/                   // Scripts para operaciones como creación de tablas
 |   |-- createTables.js        // Script para crear tablas en PostgreSQL
@@ -90,11 +91,12 @@ src/
 |   |-- invoiceService.js      // Cálculos de facturación
 |   |-- statisticsService.js   // Lógica para estadísticas de consumo/inyección
 |   |-- systemLoadService.js   // Obtención de carga por hora del sistema
+```
 
 
 📋 Recursos Adicionales
 Base de Datos:
-Asegúrate de tener PostgreSQL configurado y funcionando en tu máquina. Puedes descargarlo desde `https://www.postgresql.org/`.
+Asegúrate de tener PostgreSQL configurado y funcionando en tu máquina. Puedes descargarlo desde ```https://www.postgresql.org/```.
 
 Node.js:
-Si no tienes Node.js instalado, puedes descargarlo desde 'https://nodejs.org/es'
+Si no tienes Node.js instalado, puedes descargarlo desde ```'https://nodejs.org/es'```
