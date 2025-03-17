@@ -12,13 +12,13 @@ Sigue estos simples pasos para configurar y ejecutar la API:
 Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando:
 
 ```bash
-node -v
+node -v``
 
 
-1. Instala las dependencias del proyecto corriendo el comando `npm install`
+### **2. Instala las dependencias del proyecto corriendo el comando `npm install`
 2. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo src/database/connection.js. Por ejemplo:
 
-`const pool = new Pool({
+```const pool = new Pool({
     user: '<tu_usuario>',
     host: '<host>',
     database: '<nombre_base_datos>',
