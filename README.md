@@ -11,8 +11,7 @@ Sigue estos simples pasos para configurar y ejecutar la API:
 ### **1. Verifica tu versión de Node.js**
 Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando:
 
-```bash
-node -v``
+```bash node -v```
 
 
 ### **2. Instala las dependencias del proyecto corriendo el comando `npm install`
