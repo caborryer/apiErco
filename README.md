@@ -69,7 +69,7 @@ xm_data_hourly_per_agent.csv
 
 Accede a la documentación interactiva de la API, generada con Swagger, desde tu navegador:
 
-👉 ```http://localhost:3000/api-docs```
+👉 http://localhost:3000/api-docs
 
 Ahí podrás explorar cada endpoint, probarlo directamente y visualizar los datos esperados.
 
