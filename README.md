@@ -9,23 +9,20 @@ Bienvenido a APIERCO, una API diseñada para el cálculo, análisis y facturaci�
 Sigue estos simples pasos para configurar y ejecutar la API:
 
 ### **1. Verifica tu versión de Node.js**
-Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando:
-
-```bash node -v```
-
+Asegúrate de tener instalada **Node.js 20** en tu sistema antes de continuar. Puedes verificar tu versión actual con este comando: `bash node -v`
 
 ### **2. Instala las dependencias del proyecto corriendo el comando `npm install`
 
-### **3. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo src/database/connection.js. Por ejemplo:
+### **3. Crea una conexión en tu base de datos PostgreSQL y proporciona los datos necesarios en el archivo `src/database/connection.js`. Por ejemplo:
 
-`const pool = new Pool({
+```const pool = new Pool({
     user: '<tu_usuario>',
     host: '<host>',
     database: '<nombre_base_datos>',
     password: '<tu_contraseña>',
     port: 5432,
 });
-`
+```
 ### **4. Ejecuta el comando `npm run create-tables`, este comando se encargara de crear las tablas en la base de datos segun el esquema propuesto.
 
 ### **5. Ejecuta el comando `npm run load-csv-data` que se encargara de cargar los datos iniciales desde los archivos CSV en las tablas correspondientes (en el orden correcto): 
