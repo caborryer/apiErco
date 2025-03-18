@@ -9,8 +9,8 @@ const getConsumptionStatistics = async (clientId) => {
                 COUNT(c.id_record) AS total_records
             FROM consumption c
             JOIN records r ON c.id_record = r.id_record
-            JOIN xm_data_hourly_per_agent xm ON r.record_timestamp = xm.record_timestamp
-            WHERE xm.value = $1;
+            JOIN services s ON r.id_service = s.id_service
+            WHERE s.id_service = $1;
         `;
         const result = await db.query(query, [clientId]);
         console.log('PASA')
@@ -34,8 +34,9 @@ const getInjectionStatistics = async (clientId) => {
                 COUNT(i.id_record) AS total_records
             FROM injection i
             JOIN records r ON i.id_record = r.id_record
-            WHERE r.client_id = $1;
-        `; // preguntar de donde sale el clientId
+            JOIN services s ON r.id_service = s.id_service
+            WHERE s.id_service = $1;
+        `;
         const result = await db.query(query, [clientId]);
         return {
             total: parseFloat(result.rows[0]?.total_injection || 0).toFixed(2),
